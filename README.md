@@ -2,6 +2,8 @@
 
 ArmX is a private, offline-first training log for focused forearm work. It is intentionally local-only: sessions live in IndexedDB and can be exported as JSON or CSV at any time.
 
+Public repository: https://github.com/TheoPerson/ArmxX
+
 ## Run locally
 
 ```bash
@@ -28,3 +30,4 @@ npm run build
 - [SECURITY.md](./SECURITY.md) - threat model and safeguards
 - [ADE.md](./ADE.md) - agent workflow and decision logging
 - [ROADMAP.md](./ROADMAP.md) - honest V1 completion score and remaining release gates
+
