@@ -1,4 +1,4 @@
-# Forearm Lab - Agent-driven development
+# ArmX - Agent-driven development
 
 ## Roles
 

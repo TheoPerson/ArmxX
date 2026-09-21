@@ -1,8 +1,8 @@
-# Forearm Lab - Security
+# ArmX - Security
 
 ## Trust boundary
 
-Forearm Lab has no authentication and no server data path in the MVP. The primary sensitive asset is the user's local training history. IndexedDB is not encrypted, so device-level access remains the relevant threat.
+ArmX has no authentication and no server data path in the MVP. The primary sensitive asset is the user's local training history. IndexedDB is not encrypted, so device-level access remains the relevant threat.
 
 ## Controls
 

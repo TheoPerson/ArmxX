@@ -32,4 +32,3 @@ Status date: 2026-09-21
 ## Explicitly out of V1
 
 Cloud sync, accounts, social features, encrypted local storage, push notifications, and a SQLite export are intentionally not included in this score.
-

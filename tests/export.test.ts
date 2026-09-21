@@ -27,4 +27,10 @@ describe("data export contract", () => {
   it("rejects malformed imports before persistence", () => {
     expect(() => parseImport({ version: 1, sessions: [{ id: "broken" }] })).toThrow("invalides");
   });
+
+  it("rejects unsupported versions and unsafe numeric values", () => {
+    expect(() => parseImport({ version: 2, sessions: [session] })).toThrow("Version JSON");
+    expect(() => parseImport({ version: 1, sessions: [{ ...session, reps: -1 }] })).toThrow("invalides");
+    expect(() => parseImport({ version: 1, sessions: [{ ...session, date: "not-a-date" }] })).toThrow("invalides");
+  });
 });

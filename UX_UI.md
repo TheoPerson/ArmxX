@@ -1,4 +1,4 @@
-# Forearm Lab - UX/UI system
+# ArmX - UX/UI system
 
 ## Direction: strength studio
 
@@ -14,7 +14,7 @@ The visual language is a quiet training studio: mineral surfaces, ink contrast, 
 | Muted text | `#B9BEB2` | `#60665D` |
 | Action | `#FF714E` | `#E55231` |
 
-Typography uses Manrope for readable UI and DM Mono only for compact measurements, timers, and status labels. Spacing follows a 4/8px rhythm. Cards are reserved for grouping, not decoration.
+Typography uses Segoe UI Variable/Segoe UI for readable UI and a compact mono fallback only for the session timer. Spacing follows a 4/8px rhythm. Cards are reserved for grouping, not decoration.
 
 ## Screen map
 

@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "ArmX - Train with intent",
-  description: "A fast, private, offline-first forearm training log.",
+  description: "A fast, local-first forearm training log.",
   applicationName: "ArmX",
   appleWebApp: { capable: true, title: "ArmX", statusBarStyle: "black-translucent" },
 };

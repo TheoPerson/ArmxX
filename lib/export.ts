@@ -27,17 +27,18 @@ export function downloadFile(content: string, filename: string, type: string) {
   link.href = url;
   link.download = filename;
   link.click();
-  URL.revokeObjectURL(url);
+  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
 export function parseImport(value: unknown) {
   if (!value || typeof value !== "object") throw new Error("Format JSON non reconnu.");
-  const candidate = value as { sessions?: unknown };
+  const candidate = value as { version?: unknown; sessions?: unknown };
+  if (candidate.version !== 1) throw new Error("Version JSON non supportée.");
   if (!Array.isArray(candidate.sessions)) throw new Error("Le fichier ne contient pas de sessions.");
   const sessions = candidate.sessions.filter((item): item is Session => {
     if (!item || typeof item !== "object") return false;
     const session = item as Partial<Session>;
-    return typeof session.id === "string" && typeof session.exerciseId === "string" && typeof session.exerciseName === "string" && typeof session.date === "string" && typeof session.sets === "number" && typeof session.reps === "number" && typeof session.durationSeconds === "number";
+    return typeof session.id === "string" && session.id.trim().length > 0 && typeof session.exerciseId === "string" && session.exerciseId.trim().length > 0 && typeof session.exerciseName === "string" && session.exerciseName.trim().length > 0 && typeof session.date === "string" && Number.isFinite(Date.parse(session.date)) && typeof session.sets === "number" && Number.isInteger(session.sets) && session.sets > 0 && typeof session.reps === "number" && Number.isInteger(session.reps) && session.reps >= 0 && typeof session.durationSeconds === "number" && Number.isFinite(session.durationSeconds) && session.durationSeconds >= 0;
   });
   if (sessions.length !== candidate.sessions.length) throw new Error("Une ou plusieurs sessions sont invalides.");
   return sessions;
